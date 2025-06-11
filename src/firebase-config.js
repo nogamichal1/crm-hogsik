@@ -1,5 +1,5 @@
 export const firebaseConfig = {
-  apiKey: "AIzaSyBp53ZGr1C0WZldw7XghfxZics2fOcushs",
-  authDomain: "hogs-crm.firebaseapp.com",
-  projectId: "hogs-crm"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
 };
