@@ -118,6 +118,29 @@ const [useCrossDateFilter, setUseCrossDateFilter] = useState(false);
   return (
     <div className="p-4 pt-0">
       <div className="flex justify-between items-center mb-2">
+        <div className="flex items-center gap-4">
+          <h2 className="text-2xl font-bold">Zamówienia promowe</h2>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="bg-blue-600 text-white text-xl px-3 py-1 rounded"
+          >
+            +
+          </button>
+        </div>
+        <div className="flex gap-2">
+          <input
+            type="text"
+            placeholder="Wyszukaj..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="border p-1 rounded"
+          />
+          <button
+            onClick={() => setSearchTerm(searchTerm.trim())}
+            className="bg-blue-600 text-white px-3 py-1 rounded"
+          >
+            Szukaj
+          </button>
         </div>
       </div>
 
@@ -204,10 +227,14 @@ const [useCrossDateFilter, setUseCrossDateFilter] = useState(false);
         </table>
       </div>
       <div className="mt-4">
+        <button
+          className="bg-blue-600 text-white px-4 py-2 rounded"
+          onClick={() => {
             setEditIndex(null);
             setIsModalOpen(true);
           }}
         >
+          Dodaj zamówienie
         </button>
       </div>
       {isModalOpen && (
